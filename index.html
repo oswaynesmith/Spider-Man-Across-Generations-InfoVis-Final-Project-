@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spider-Man Across Generations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero">
+    <canvas id="web-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-eyebrow">An Interactive Data Story</div>
+      <h1 class="hero-title">
+        Spider-Man<br/>
+        <span class="hero-title-accent">Across Generations</span>
+      </h1>
+      <p class="hero-subtitle">
+        Three actors. Eight films. Twenty years.<br/>
+        How has the web-slinger's legacy evolved across every era?
+      </p>
+      <div class="era-badges">
+        <span class="era-badge tobey">Tobey Maguire</span>
+        <span class="era-badge-sep">×</span>
+        <span class="era-badge andrew">Andrew Garfield</span>
+        <span class="era-badge-sep">×</span>
+        <span class="era-badge tom">Tom Holland</span>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TIMELINE ===================== -->
+  <section id="timeline" class="scroll-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-number">01</div>
+        <h2 class="section-title">The Web Timeline</h2>
+        <p class="section-desc">
+          From Sam Raimi's 2002 origin to the multiverse-shattering No Way Home,
+          every Spider-Man film plotted across two decades of cinema.
+          Circle size reflects box office gross.
+        </p>
+      </div>
+      <div class="chart-container" id="timeline-chart"></div>
+      <div class="chart-legend" id="timeline-legend"></div>
+    </div>
+  </section>
+
+  <!-- ===================== TOBEY ERA ===================== -->
+  <section id="era-tobey" class="scroll-section era-section">
+    <div class="era-stripe tobey-stripe"></div>
+    <div class="section-inner">
+      <div class="era-header">
+        <div class="era-label tobey-label">The Maguire Era</div>
+        <h2 class="section-title">2002 – 2007</h2>
+        <p class="section-desc">
+          Directed by Sam Raimi, the original trilogy defined superhero cinema for a
+          generation. Spider-Man 2 remains one of the most critically lauded comic
+          book films ever made — winning the Academy Award for Best Visual Effects.
+          The era peaked early and stumbled with a polarizing third entry.
+        </p>
+        <div class="era-stats-row">
+          <div class="era-stat"><span class="stat-val tobey-color" id="tobey-avg-imdb">—</span><span class="stat-label">Avg IMDb</span></div>
+          <div class="era-stat"><span class="stat-val tobey-color" id="tobey-avg-rt">—</span><span class="stat-label">Avg RT Score</span></div>
+          <div class="era-stat"><span class="stat-val tobey-color" id="tobey-total-bo">—</span><span class="stat-label">Total Box Office</span></div>
+        </div>
+      </div>
+      <div class="chart-container" id="ratings-tobey"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ANDREW ERA ===================== -->
+  <section id="era-andrew" class="scroll-section era-section">
+    <div class="era-stripe andrew-stripe"></div>
+    <div class="section-inner">
+      <div class="era-header">
+        <div class="era-label andrew-label">The Garfield Era</div>
+        <h2 class="section-title">2012 – 2014</h2>
+        <p class="section-desc">
+          Sony's reboot brought fresh energy with Andrew Garfield's charming, quippy
+          Peter Parker and a new love interest in Gwen Stacy. Critics were cautiously
+          optimistic about the first film — but the franchise struggled to find its footing.
+          The Amazing Spider-Man 2 became the lowest-rated and lowest-grossing entry
+          in the franchise, ending the series prematurely.
+        </p>
+        <div class="era-stats-row">
+          <div class="era-stat"><span class="stat-val andrew-color" id="andrew-avg-imdb">—</span><span class="stat-label">Avg IMDb</span></div>
+          <div class="era-stat"><span class="stat-val andrew-color" id="andrew-avg-rt">—</span><span class="stat-label">Avg RT Score</span></div>
+          <div class="era-stat"><span class="stat-val andrew-color" id="andrew-total-bo">—</span><span class="stat-label">Total Box Office</span></div>
+        </div>
+      </div>
+      <div class="chart-container" id="ratings-andrew"></div>
+    </div>
+  </section>
+
+  <!-- ===================== TOM ERA ===================== -->
+  <section id="era-tom" class="scroll-section era-section">
+    <div class="era-stripe tom-stripe"></div>
+    <div class="section-inner">
+      <div class="era-header">
+        <div class="era-label tom-label">The Holland Era</div>
+        <h2 class="section-title">2017 – 2019</h2>
+        <p class="section-desc">
+          Tom Holland's Peter Parker debuted in Captain America: Civil War before
+          getting his own MCU trilogy. With the weight of Marvel's interconnected
+          universe behind him — and Tony Stark as a mentor — this era delivered
+          consistently high critic scores and growing box office returns,
+          setting the stage for something unprecedented.
+        </p>
+        <div class="era-stats-row">
+          <div class="era-stat"><span class="stat-val tom-color" id="tom-avg-imdb">—</span><span class="stat-label">Avg IMDb</span></div>
+          <div class="era-stat"><span class="stat-val tom-color" id="tom-avg-rt">—</span><span class="stat-label">Avg RT Score</span></div>
+          <div class="era-stat"><span class="stat-val tom-color" id="tom-total-bo">—</span><span class="stat-label">Total Box Office</span></div>
+        </div>
+      </div>
+      <div class="chart-container" id="ratings-tom"></div>
+    </div>
+  </section>
+
+  <!-- ===================== NO WAY HOME ===================== -->
+  <section id="no-way-home" class="scroll-section nwh-section">
+    <div class="nwh-bg"></div>
+    <div class="section-inner">
+      <div class="nwh-eyebrow">The Convergence</div>
+      <h2 class="nwh-title">Spider-Man: No Way Home</h2>
+      <p class="nwh-year">2021</p>
+      <p class="nwh-desc">
+        For the first time in cinema history, all three Spider-Men shared the screen.
+        No Way Home became a cultural phenomenon — the highest-grossing Spider-Man
+        film ever made, and one of the highest-rated entries in the entire franchise.
+      </p>
+      <div class="nwh-scores" id="nwh-scores">
+        <div class="nwh-score-card">
+          <div class="nwh-score-val" id="nwh-imdb">8.1</div>
+          <div class="nwh-score-label">IMDb Rating</div>
+          <div class="nwh-score-sub">out of 10</div>
+        </div>
+        <div class="nwh-score-card">
+          <div class="nwh-score-val" id="nwh-rt">93<span style="font-size:1.5rem">%</span></div>
+          <div class="nwh-score-label">Rotten Tomatoes</div>
+          <div class="nwh-score-sub">critic score</div>
+        </div>
+        <div class="nwh-score-card">
+          <div class="nwh-score-val" id="nwh-bo">$814M</div>
+          <div class="nwh-score-label">Box Office</div>
+          <div class="nwh-score-sub">domestic gross</div>
+        </div>
+        <div class="nwh-score-card">
+          <div class="nwh-score-val" id="nwh-meta">71</div>
+          <div class="nwh-score-label">Metascore</div>
+          <div class="nwh-score-sub">out of 100</div>
+        </div>
+      </div>
+      <div class="nwh-actors">
+        <div class="nwh-actor tobey-color">Tobey Maguire</div>
+        <div class="nwh-actor-plus">+</div>
+        <div class="nwh-actor andrew-color">Andrew Garfield</div>
+        <div class="nwh-actor-plus">+</div>
+        <div class="nwh-actor tom-color">Tom Holland</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HEAD-TO-HEAD ===================== -->
+  <section id="comparison" class="scroll-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-number">05</div>
+        <h2 class="section-title">Era vs. Era</h2>
+        <p class="section-desc">
+          How do the three eras stack up when you average each metric?
+          The spider chart below shows era averages across four dimensions.
+          Click an era in the legend to toggle it on or off.
+        </p>
+      </div>
+      <div class="comparison-grid">
+        <div class="chart-half">
+          <h3 class="chart-label">Multi-Metric Comparison</h3>
+          <div class="chart-container" id="radar-chart"></div>
+        </div>
+        <div class="chart-half">
+          <h3 class="chart-label">Era Averages</h3>
+          <div class="filter-buttons" id="era-filter-buttons">
+            <button class="filter-btn active" data-metric="imdb">IMDb</button>
+            <button class="filter-btn" data-metric="metascore">Metascore</button>
+            <button class="filter-btn" data-metric="rt">RT Score</button>
+            <button class="filter-btn" data-metric="boxOffice">Box Office</button>
+          </div>
+          <div class="chart-container" id="comparison-bars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BOX OFFICE ===================== -->
+  <section id="box-office" class="scroll-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-number">06</div>
+        <h2 class="section-title">Following the Money</h2>
+        <p class="section-desc">
+          Box office performance across all eight films, sorted from highest to lowest.
+          No Way Home's $814M domestic gross dwarfs every other entry — but look at
+          how the Garfield era's declining numbers accelerated the reboot decision.
+        </p>
+      </div>
+      <div class="chart-container chart-container--tall" id="box-office-chart"></div>
+    </div>
+  </section>
+
+  <!-- ===================== VERDICT ===================== -->
+  <section id="verdict" class="scroll-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-number">07</div>
+        <h2 class="section-title">The Verdict</h2>
+        <p class="section-desc">
+          Across two decades, the Spider-Man franchise has continually reinvented itself.
+          Here's what the data tells us.
+        </p>
+      </div>
+      <div class="verdict-cards">
+        <div class="verdict-card">
+          <div class="verdict-icon tobey-color">🕷</div>
+          <h3 class="verdict-card-title tobey-color">Critics' Darling</h3>
+          <p>The Raimi era holds the highest average critic scores. Spider-Man 2 remains the gold standard — 93% on Rotten Tomatoes and a Metascore of 83, still unmatched by any other entry.</p>
+        </div>
+        <div class="verdict-card">
+          <div class="verdict-icon andrew-color">📉</div>
+          <h3 class="verdict-card-title andrew-color">The Lost Era</h3>
+          <p>The Garfield era scored lowest across every metric. TASM2's 51% RT score and $203M gross — the franchise's lowest — made a third film commercially untenable and led directly to the MCU partnership.</p>
+        </div>
+        <div class="verdict-card">
+          <div class="verdict-icon tom-color">💰</div>
+          <h3 class="verdict-card-title tom-color">Box Office Supremacy</h3>
+          <p>The MCU era dominates at the box office. No Way Home's $814M domestic gross is nearly double Spider-Man (2002)'s $408M — and that's without counting the MCU films it was embedded within.</p>
+        </div>
+      </div>
+      <div class="verdict-table-wrap">
+        <table class="verdict-table" id="verdict-table">
+          <thead>
+            <tr>
+              <th>Film</th>
+              <th>Era</th>
+              <th>Year</th>
+              <th>IMDb</th>
+              <th>RT</th>
+              <th>Metascore</th>
+              <th>Box Office</th>
+            </tr>
+          </thead>
+          <tbody id="verdict-table-body"></tbody>
+        </table>
+      </div>
+      <div class="footer">
+        <p>Data sourced from the <a href="https://www.omdbapi.com/" target="_blank" rel="noopener">OMDb API</a>. Box office figures reflect domestic US gross.</p>
+        <p>Built with <a href="https://d3js.org/" target="_blank" rel="noopener">D3.js v7</a> for the InfoVis Final Project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- App modules -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
