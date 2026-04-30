@@ -1,0 +1,1 @@
+Spider-Man has been rebooted across three major live-action eras: Tobey Maguire, Andrew Garfield, and Tom Holland. Our project compares these eras using movie data to see how audience reception, critic scores, and box office success changed over time.
